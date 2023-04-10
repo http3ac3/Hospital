@@ -53,11 +53,16 @@ namespace Hospital
                     InfoDGV.DataSource = ds.Tables[0];
                     InfoDGV.Dock = DockStyle.Fill;
                     InfoDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    if (visitPrice.isVisiter)
+                    try
                     {
-                        InfoDGV.Columns[3].Visible = false;
-                        InfoDGV.Columns[4].Visible = false;
+                        if (visitPrice.isVisiter)
+                        {
+                            InfoDGV.Columns[3].Visible = false;
+                            InfoDGV.Columns[4].Visible = false;
+                        }
                     }
+                    catch { }
+                    
                     break;
             }
 
@@ -74,6 +79,7 @@ namespace Hospital
                 visitPrice.FIODoctorTB.Text = $"{lastName} {firstName} {patronymic}";
                 visitPrice.SpecializationTB.Text = specialization;
                 this.Close();
+                isSetPrice = false;
                 return;
             }    
             switch (mode)
