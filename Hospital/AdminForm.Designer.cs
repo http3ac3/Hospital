@@ -52,6 +52,7 @@ namespace Hospital
             this.DeletePatientButton = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteRegistryButton = new System.Windows.Forms.ToolStripMenuItem();
             this.посещениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GetPriceButton = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsDGV)).BeginInit();
@@ -196,7 +197,8 @@ namespace Hospital
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewVisitButton,
             this.AddDropDownButton,
-            this.DeleteDropDownLButton});
+            this.DeleteDropDownLButton,
+            this.GetPriceButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(931, 26);
@@ -229,21 +231,21 @@ namespace Hospital
             // AddDoctorButton
             // 
             this.AddDoctorButton.Name = "AddDoctorButton";
-            this.AddDoctorButton.Size = new System.Drawing.Size(180, 24);
+            this.AddDoctorButton.Size = new System.Drawing.Size(161, 24);
             this.AddDoctorButton.Text = "Доктор";
             this.AddDoctorButton.Click += new System.EventHandler(this.AddDoctorButton_Click);
             // 
             // AddPatientButton
             // 
             this.AddPatientButton.Name = "AddPatientButton";
-            this.AddPatientButton.Size = new System.Drawing.Size(180, 24);
+            this.AddPatientButton.Size = new System.Drawing.Size(161, 24);
             this.AddPatientButton.Text = "Пациент";
             this.AddPatientButton.Click += new System.EventHandler(this.AddPatientButton_Click);
             // 
             // AddRegistryButton
             // 
             this.AddRegistryButton.Name = "AddRegistryButton";
-            this.AddRegistryButton.Size = new System.Drawing.Size(180, 24);
+            this.AddRegistryButton.Size = new System.Drawing.Size(161, 24);
             this.AddRegistryButton.Text = "Регистратура";
             this.AddRegistryButton.Click += new System.EventHandler(this.AddRegistryButton_Click);
             // 
@@ -264,30 +266,40 @@ namespace Hospital
             // DeleteDoctorButton
             // 
             this.DeleteDoctorButton.Name = "DeleteDoctorButton";
-            this.DeleteDoctorButton.Size = new System.Drawing.Size(180, 24);
+            this.DeleteDoctorButton.Size = new System.Drawing.Size(161, 24);
             this.DeleteDoctorButton.Text = "Доктора";
             this.DeleteDoctorButton.Click += new System.EventHandler(this.DeleteDoctorButton_Click);
             // 
             // DeletePatientButton
             // 
             this.DeletePatientButton.Name = "DeletePatientButton";
-            this.DeletePatientButton.Size = new System.Drawing.Size(180, 24);
+            this.DeletePatientButton.Size = new System.Drawing.Size(161, 24);
             this.DeletePatientButton.Text = "Пациента";
             this.DeletePatientButton.Click += new System.EventHandler(this.DeletePatientButton_Click);
             // 
             // DeleteRegistryButton
             // 
             this.DeleteRegistryButton.Name = "DeleteRegistryButton";
-            this.DeleteRegistryButton.Size = new System.Drawing.Size(180, 24);
+            this.DeleteRegistryButton.Size = new System.Drawing.Size(161, 24);
             this.DeleteRegistryButton.Text = "Регистратуру";
             this.DeleteRegistryButton.Click += new System.EventHandler(this.DeleteRegistryButton_Click);
             // 
             // посещениеToolStripMenuItem
             // 
             this.посещениеToolStripMenuItem.Name = "посещениеToolStripMenuItem";
-            this.посещениеToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.посещениеToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.посещениеToolStripMenuItem.Text = "Посещение";
             this.посещениеToolStripMenuItem.Click += new System.EventHandler(this.посещениеToolStripMenuItem_Click);
+            // 
+            // GetPriceButton
+            // 
+            this.GetPriceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.GetPriceButton.Image = ((System.Drawing.Image)(resources.GetObject("GetPriceButton.Image")));
+            this.GetPriceButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GetPriceButton.Name = "GetPriceButton";
+            this.GetPriceButton.Size = new System.Drawing.Size(156, 23);
+            this.GetPriceButton.Text = "Стоимость посещения";
+            this.GetPriceButton.Click += new System.EventHandler(this.GetPriceButton_Click);
             // 
             // AdminForm
             // 
@@ -344,5 +356,6 @@ namespace Hospital
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView MedicalCardsDGV;
         private System.Windows.Forms.ToolStripMenuItem посещениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton GetPriceButton;
     }
 }

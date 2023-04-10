@@ -55,5 +55,10 @@ namespace Hospital
         {
             new VisitList(connection, passportSeries, passportNumber).Show();
         }
+
+        private void VisitPriceButton_Click(object sender, EventArgs e)
+        {
+            new VisitPrice(connection, true).Show();
+        }
     }
 }

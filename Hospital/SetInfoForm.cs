@@ -16,11 +16,23 @@ namespace Hospital
         SqlConnection connection;
         VisitInfo visitInfoForm;
         VisitInfo.SetMode mode;
+
+        VisitPrice visitPrice;
+        bool isSetPrice;
         public SetInfoForm(SqlConnection connection, VisitInfo visitInfoForm, VisitInfo.SetMode mode)
         {
             this.connection = connection;
             this.visitInfoForm = visitInfoForm;
             this.mode = mode;
+            InitializeComponent();
+        }
+
+        public SetInfoForm(SqlConnection connection, VisitPrice visitPrice, bool isSetPrice)
+        {
+            this.connection = connection;
+            this.visitPrice = visitPrice;
+            this.isSetPrice = isSetPrice;
+            this.mode = VisitInfo.SetMode.DOCTOR;
             InitializeComponent();
         }
 
@@ -39,6 +51,13 @@ namespace Hospital
                     ds = new DataSet();
                     adapter.Fill(ds);
                     InfoDGV.DataSource = ds.Tables[0];
+                    InfoDGV.Dock = DockStyle.Fill;
+                    InfoDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    if (visitPrice.isVisiter)
+                    {
+                        InfoDGV.Columns[3].Visible = false;
+                        InfoDGV.Columns[4].Visible = false;
+                    }
                     break;
             }
 
@@ -46,6 +65,17 @@ namespace Hospital
 
         private void InfoDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (isSetPrice)
+            {
+                string lastName = InfoDGV.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string firstName = InfoDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string patronymic = InfoDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string specialization = InfoDGV.Rows[e.RowIndex].Cells[5].Value.ToString();
+                visitPrice.FIODoctorTB.Text = $"{lastName} {firstName} {patronymic}";
+                visitPrice.SpecializationTB.Text = specialization;
+                this.Close();
+                return;
+            }    
             switch (mode)
             {
                 case VisitInfo.SetMode.PATIENT:

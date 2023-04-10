@@ -38,6 +38,7 @@ namespace Hospital
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.RegistryDGV = new System.Windows.Forms.DataGridView();
+            this.VisitPriceButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsDGV)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -69,7 +70,8 @@ namespace Hospital
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.VisitListButton});
+            this.VisitListButton,
+            this.VisitPriceButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1381, 26);
@@ -130,6 +132,17 @@ namespace Hospital
             this.RegistryDGV.Size = new System.Drawing.Size(1362, 461);
             this.RegistryDGV.TabIndex = 4;
             // 
+            // VisitPriceButton
+            // 
+            this.VisitPriceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.VisitPriceButton.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.VisitPriceButton.Image = ((System.Drawing.Image)(resources.GetObject("VisitPriceButton.Image")));
+            this.VisitPriceButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.VisitPriceButton.Name = "VisitPriceButton";
+            this.VisitPriceButton.Size = new System.Drawing.Size(156, 23);
+            this.VisitPriceButton.Text = "Стоимость посещения";
+            this.VisitPriceButton.Click += new System.EventHandler(this.VisitPriceButton_Click);
+            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -139,7 +152,7 @@ namespace Hospital
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PatientForm";
             this.Text = "Регистратура: Пациент";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PatientForm_FormClosing);
@@ -165,5 +178,6 @@ namespace Hospital
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView RegistryDGV;
+        private System.Windows.Forms.ToolStripButton VisitPriceButton;
     }
 }

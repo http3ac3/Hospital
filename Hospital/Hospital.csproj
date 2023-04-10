@@ -120,6 +120,12 @@
     <Compile Include="VisitList.Designer.cs">
       <DependentUpon>VisitList.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisitPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitPrice.Designer.cs">
+      <DependentUpon>VisitPrice.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisitList.resx">
       <DependentUpon>VisitList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitPrice.resx">
+      <DependentUpon>VisitPrice.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
